@@ -23,17 +23,17 @@ public class Main {
         if (carSpeed>60){
             System.out.println("Если скорость "+carSpeed+", то придеться платить штраф");
         }else{
-            System.out.println("Если скорость "+carSpeed+", можете не беспокоиться");
+            System.out.println("Если скорость "+carSpeed+", можно ездить спокойно");
         }
         System.out.println("-----Задача 4-----");
         int ageStages=68;
-        if (ageStages>=2 && 6<=ageStages){
+        if (ageStages>=2 && ageStages<=6){
             System.out.println("Ты должен идти в детский сад");
         }
-        if (ageStages>=7 && 17<=ageStages){
+        if (ageStages>=7 && ageStages<=17){
             System.out.println("Ты должен ходить в школу");
         }
-        if (ageStages>=18 && 24<=ageStages){
+        if (ageStages>=18 && ageStages<=24){
             System.out.println("Ты должен ходить в универ");
         }
         if (ageStages>24){
@@ -54,12 +54,17 @@ public class Main {
             System.out.println("Ты можешь кататься на аттракционах без сопровождения");
         }
         System.out.println("-----Задача 6-----");
-        int wagonFullnes=70;
-        boolean wagonIsNotFullnes= wagonFullnes<60 && wagonFullnes<=102;
-        if (wagonIsNotFullnes){
-            System.out.println("Вагон не заполнен и есть свободные сидячие места");
-        }else{
-            System.out.println("Вагон не заполнен но в нем нет свободных сидячих мест");
+        int totalSeats = 102;
+        int wagonFullness = 70;
+        boolean hasFreeSeats = wagonFullness < totalSeats;
+        if (hasFreeSeats) {
+            if (wagonFullness < 60) {
+                System.out.println("Вагон не заполнен и есть свободные сидячие места");
+            } else {
+                System.out.println("Вагон не заполнен, но в нем нет свободных сидячих мест");
+            }
+        } else {
+            System.out.println("Вагон заполнен");
         }
         System.out.println("-----Задача 7-----");
         int one=15;
@@ -69,7 +74,7 @@ public class Main {
         boolean twoBiggest=two>one && two>three;
         if (oneBiggest){
             System.out.println("Число под номером один больше");
-        } if (twoBiggest){
+        }else if (twoBiggest){
             System.out.println("Число под номером два больше");
         }else{
             System.out.println("Число под номером три больше");
